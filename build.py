@@ -230,7 +230,7 @@ def head(p, title, desc, canonical, image, schemas, intro=False):
 <link rel="icon" href="{p}img/logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{p}style.css">
 <link rel="preload" as="image" href="{p}img/{image}">
 {intro_js}
@@ -280,7 +280,7 @@ def footer(p, page):
     return f"""
 <footer>
   <div class="wrap">
-    <p class="foot-big">Got a tree problem?<br><a href="tel:{TEL}">{PHONE}</a></p>
+    <p class="foot-big">Have a tree that needs attention?<br><a href="tel:{TEL}">Call {PHONE}</a></p>
     <div class="foot-grid">
       <div>
         <span class="logo" style="display:inline-block;margin-bottom:14px"><img src="{p}img/logo.jpg" alt="Sand Point Tree Services logo" loading="lazy" style="height:48px"></span>
@@ -300,8 +300,8 @@ def footer(p, page):
   </div>
 </footer>
 <a class="wa" href="{WA}" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
-  <span class="wa-tip">Need a tree quote? 👋<small>Chat with us on WhatsApp</small></span>
-  <span class="wa-btn">{ICON['wa']}<span class="wa-dot">1</span></span>
+  <span class="wa-tip">Need a tree quote?<small>Chat with us on WhatsApp</small></span>
+  <span class="wa-btn">{ICON['wa']}</span>
 </a>
 <div class="callbar">
   <a class="btn btn-orange" href="tel:{TEL}">{ICON['phone']} Call Now</a>
@@ -451,7 +451,6 @@ def build_home():
     p = ""
     svc_cards = "\n".join(f"""      <a class="svc reveal d{i % 3}" href="services/{s['slug']}.html">
         <img src="img/{s['hero']}" alt="{e(s['hero_alt'])}" loading="lazy">
-        <span class="num">0{i + 1}</span>
         <div class="body"><h3>{e(s['nav'])}</h3><p>{e(s['tagline'])}</p><span class="more">Learn more <i>→</i></span></div>
       </a>""" for i, s in enumerate(SERVICES))
     ticker_words = "".join(f"<span>{w}</span>" for w in ["Tree Removal", "Tree Trimming", "Palm Trimming", "Stump Grinding", "Land Clearing", "Storm Cleanup", "Titusville, FL"]) * 2
@@ -507,7 +506,7 @@ def build_home():
 <section id="services">
   <div class="wrap">
     <span class="eyebrow">What we do</span>
-    <h2 class="reveal">Our Tree <span class="hl">Services</span></h2>
+    <h2 class="reveal">Our tree services</h2>
     <p class="lead reveal">From a single overgrown oak to a full lot, we handle the work and the cleanup.</p>
     <div class="svc-list">
 {svc_cards}
@@ -524,7 +523,7 @@ def build_home():
   <div class="wrap why-grid">
     <div>
       <span class="eyebrow">Why choose us</span>
-      <h2 class="reveal">Local Crew.<br><span class="hl">Clean Work.</span></h2>
+      <h2 class="reveal">Local crew. <span class="hl">Clean work.</span></h2>
       <p class="lead reveal">A Titusville-based tree service that shows up, listens and leaves your yard better than we found it.</p>
       <ul class="why-list">
 {why_html}
@@ -534,10 +533,7 @@ def build_home():
       <img src="img/crew.jpg" alt="Sand Point Tree Services crew in matching shirts on a client's lawn" loading="lazy">
       <img src="img/climber.jpg" alt="Climber in a safety harness working high in a tree" loading="lazy">
       <img src="img/climb-ladder.jpg" alt="Climber working at the top of a tall dead tree" loading="lazy">
-      <div class="badge" aria-label="Rated 5.0 on Google">
-        <svg viewBox="0 0 120 120"><defs><path id="c" d="M60 60m-46 0a46 46 0 1 1 92 0a46 46 0 1 1-92 0"/></defs><text font-size="10.5" font-weight="700" fill="#fff" letter-spacing="2.4"><textPath href="#c">5-STAR RATED ON GOOGLE • 5-STAR RATED ON GOOGLE •</textPath></text></svg>
-        <div><b>5.0</b>★★★★★</div>
-      </div>
+      <a class="badge" href="{GMAPS}" target="_blank" rel="noopener" style="text-decoration:none"><b>5.0</b><div><span class="stars" aria-hidden="true">★★★★★</span><small>13 Google reviews</small></div></a>
     </div>
   </div>
 </section>
