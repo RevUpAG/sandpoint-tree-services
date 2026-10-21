@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://revupag.github.io/sandpoint-tree-services/sitemap.xml
