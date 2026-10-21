@@ -317,9 +317,13 @@ footer a:hover{color:#fff;text-decoration:underline}
 .intro-brand .logo img{height:clamp(70px,14vw,120px)}
 .intro-brand p{font:700 clamp(1rem,3vw,1.3rem) var(--display);letter-spacing:.35em;text-transform:uppercase;margin-top:18px;opacity:.8}
 .cut{position:absolute;left:0;top:50%;height:3px;width:100%;margin-top:-1.5px;background:linear-gradient(90deg,#ffb36b,var(--orange));box-shadow:0 0 18px 4px rgba(255,122,26,.8);transform:scaleX(0);transform-origin:left;z-index:3}
-.saw{position:absolute;top:50%;left:0;width:clamp(280px,48vw,460px);transform:translate(-110%,-50%);z-index:4;filter:drop-shadow(0 12px 18px rgba(0,0,0,.5))}
-.saw .chain{animation:chain .12s linear infinite}
-@keyframes chain{to{stroke-dashoffset:-12}}
+.saw{position:absolute;top:50%;left:0;width:clamp(300px,52vw,500px);transform:translate(-110%,-50%);z-index:4;filter:drop-shadow(0 12px 18px rgba(0,0,0,.5))}
+.saw .chain{animation:chain .3s linear infinite}
+@keyframes chain{to{stroke-dashoffset:-30}}
+.saw .smoke circle{fill:#bfb8aa;transform-box:fill-box;transform-origin:center;animation:puff 1s ease-out infinite}
+.saw .smoke circle:nth-child(2){animation-delay:.33s}
+.saw .smoke circle:nth-child(3){animation-delay:.66s}
+@keyframes puff{0%{transform:translate(0,0) scale(.4);opacity:.75}100%{transform:translate(-70px,-30px) scale(2.4);opacity:0}}
 .saw-body{animation:buzz .07s linear infinite alternate}
 @keyframes buzz{from{transform:translateY(-1px)}to{transform:translateY(1px)}}
 .chip{position:absolute;width:6px;height:4px;border-radius:2px;background:#e6c48a;z-index:5;pointer-events:none;animation:chip .9s ease-out forwards}
